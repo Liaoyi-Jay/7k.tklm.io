@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>坦克联盟教程网站</title>
     <style>
+
+
+
         body {
             margin: 0px;
             padding: 0px;
@@ -126,50 +129,108 @@
 
         /* 图片专栏 */
         .image-column {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: #ffffff;
-    margin-top: 20px;
-}
- 
-.image-item {
-    flex: 1 1 calc(33.333% - 40px);
-    box-sizing: border-box;
-    margin: 10px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s;
-}
- 
-.image-item img {
-    width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
- 
-.image-item p {
-    margin: 10px 0 0 0;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    font-size: 14px;
-}
- 
-.image-item:hover {
-    transform: translateY(-10px);
-}
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #ffffff;
+            margin-top: 20px;
+        }
 
+        .image-item {
+            flex: 1 1 calc(33.333% - 40px);
+            box-sizing: border-box;
+            margin: 10px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .image-item p {
+            margin: 10px 0 0 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .image-item:hover {
+            transform: translateY(-10px);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+            padding: 1px;
+        }
+
+        .icon {
+            font-size: 46px;
+        }
+
+        .icon:hover {
+            color: #eea30c;
+        }
+
+
+
+        .rightnav {
+            width: 60px;
+            height: 90px;
+            margin: 0 auto;
+        }
+
+        .rightnav a {
+            text-decoration: none;
+            color: #000;
+            font-size: 15px;
+            width: 20px;
+            text-align: center;
+            margin-left: 10px;
+        }
+
+        .rightnav a:hover {
+            color: #eea30c !important;
+
+        }
+
+        .right1 {
+            width: 80px;
+            height: 120px;
+            position: fixed;
+            top: 35%;
+            right: 2%;
+            background: #ffffff;
+            border-radius: 15px;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>坦克联盟新手教程</h1>
+        <h1 id="gettop">坦克联盟新手教程</h1>
     </header>
     <nav>
         <a href="#home">主页</a>
@@ -177,7 +238,7 @@
         <a href="#gameplay">游戏玩法</a>
         <a href="#controls">点券攻略</a>
         <a href="#tips">坦克升级攻略</a>
-        <a href="#maihao">挂售账号</a>
+        <!-- <a href="#maihao">挂售账号</a> -->
         <a href="#faq">新手答疑</a>
     </nav>
     <main>
@@ -189,7 +250,7 @@
                     <button onclick="searchText()">搜索</button>
                 </div>
                 <div class="banner">
-                    <img src="赛博girl.jpg">
+                    <img src="坦克联盟大厅.png">
                 </div>
                 <p>《坦克联盟》是一款结合了冒险、策略和角色扮演元素的游戏。你的目标是肝任务，攒礼券、道具完成自己的坦克养成，提升坦克等级。</p>
                 <ul class="steps">
@@ -207,13 +268,13 @@
                 <h2>坦克介绍</h2>
                 <p>以下是游戏里所有的坦克：</p>
                 <ul class="steps">
-                    <li>赠送:美队，钢铁，红魔，巨无霸，巨人，蓝魔6</li>
+                    <li>赠送:美队，钢铁，红魔，巨无霸，巨人，蓝魔6（其中巨人为首充1元，蓝魔累充10元即可获得）</li>
                     <li>金币:霸天猫，炸弹超人，导弹坦克，吸血鬼，蜘蛛，秦天柱，雷神，镭眼，炽天使，唐僧，孙悟空，猪八戒，沙僧，葫芦，医博士，黄蜂，饿狼，忍者神龟，绿灯，死亡，牛魔，光棱，蜘蛛精23</li>
-                    <li>商城:熊猫，喜娃，铁扇公主，蜘蛛，关羽，张飞，阿瓦塔，南瓜，赵云，核潜艇，闪电，章鱼，胡子，孔明，钟馗，小乔，金鸡，吕布，圣诞，炎龙，小黄，磁能，爱迪生，后羿，宙斯，二郎神，朱雀，剑圣，罗，刑天，雅典娜，姜太公，哪吒，冰精灵，骷髅冥王，蚩尤，东海龙王，巨灵神，华佗，黄忠，40
+                    <li>商城:熊猫，喜娃，铁扇公主，蜘蛛，关羽，张飞，阿瓦塔，南瓜，赵云，核潜艇，闪电，章鱼，胡子，孔明，钟馗，小乔，金鸡，吕布，圣诞，炎龙，小黄，磁能，爱迪生，后羿，宙斯，二郎神，朱雀，剑圣，罗，刑天，雅典娜，姜太公，哪吒，冰精灵，骷髅冥王，蚩尤，东海龙王，巨灵神，华佗，黄忠，如来41
                     </li>
-                    <li>88卷:柯，千手，老君，如来，阿木，洛克，冰墩墩，水手8</li>
-                    <li>399:皮卡，甜心，张三丰，时间，恶灵，武松，魔花，7</li>
-                    <li>499:风清扬，司马懿，沙漠死神，潜行者，奥丁，轩辕，塔罗斯，烈焰战车8</li>
+                    <li>88卷:阿木，洛克，千手，柯，老君，冰墩墩，水手，恶灵，皮卡,9</li>
+                    <li>399:甜心，张三丰，时间，武松，魔花，风清扬，6</li>
+                    <li>499:司马懿，沙漠死神，潜行者，奥丁，轩辕，塔罗斯，烈焰战车,7</li>
                     <li>人品王:年兽鸡，诸葛亮，骷髅王，金角，霸王龙，三头犬，6</li>
                 </ul>
             </div>
@@ -249,51 +310,51 @@
                 <h2>坦克升级攻略</h2>
                 <p>以下是游戏里部分类型坦克升级攻略：</p>
                 <ul class="steps">
-                    <li>活动升级(紫)
+                    <li>活动升级(紫)<br>
 
-                        4->5:40普通黄紫宝石高动
+                        4->5:40普通黄紫宝石高动<br>
 
-                        5->6:70普通黄无暇紫高环
+                        5->6:70普通黄无暇紫高环(光棱，死亡飞翼各60)<br>
 
-                        (光棱，死亡飞翼各60)
-
-                        6->7:90优质黄无暇紫高环
-
-                        (光棱，死亡飞翼各80)</li>
+                        6->7:90优质黄无暇紫高环(光棱，死亡飞翼各80)<br>
+                    </li>
                     <li>活动升级(黄)
 
-                        (绿巨人，猪八戒，金刚狼，沙僧，唐僧)
-                        4->5:40普通赤黄宝石中环
+                        (绿巨人，猪八戒，金刚狼，沙僧，唐僧)<br>
+                        4->5:40普通赤黄宝石中环<br>
 
-                        5->6:60普通赤无暇黄50高动
+                        5->6:60普通赤无暇黄50高动<br>
 
-                        6->7:80普通黄无暇黄60高环</li>
+                        6->7:80普通黄无暇黄60高环<br>
+                    </li>
                     <li>活动升级(半紫半黄)
 
-                        (忍者神龟，孙悟空，绿灯侠，蓝魔战车)
-                        4->5:40黄宝石紫宝石高动
+                        (忍者神龟，孙悟空，绿灯侠，蓝魔战车)<br>
+                        4->5:40黄宝石紫宝石高动<br>
 
-                        5->6:60黄宝石无暇紫50高环
+                        5->6:60黄宝石无暇紫50高环<br>
 
-                        6->7:80优质黄无暇紫高环</li>
-                    <li>活动升级(共)
-
-                        7->8:100普通铂完美紫80高动
-
-                        8->9:160核动力特环200完美紫
+                        6->7:80优质黄无暇紫高环<br>
                     </li>
-                    <li>活动升级返利
+                    <li>活动升级(共)<br>
 
-                        4->5:10普通黄无暇紫高环20高动10许愿
-                        5->6:15优质黄无暇紫30高环10高动20许愿
-                        6->7:12超晶5特环1稳定50许愿</li>
+                        7->8:100普通铂完美紫80高动<br>
+
+                        8->9:160核动力特环200完美紫<br>
+                    </li>
+                    <li>活动升级返利<br>
+
+                        4->5:10普通黄无暇紫高环20高动10许愿<br>
+                        5->6:15优质黄无暇紫30高环10高动20许愿<br>
+                        6->7:12超晶5特环1稳定50许愿<br>
+                    </li>
                 </ul>
             </div>
         </section>
 
 
 
-        <section id="maihao">
+        <!-- <section id="maihao">
             <div class="container">
                 <header>
                     <h1>挂售专栏</h1>
@@ -316,8 +377,8 @@
                     <p>&copy; 2024 挂售专栏. 账号均为个人卖家所有.</p>
                 </footer>
             </div>
-        </section>
-        
+        </section> -->
+
 
 
         <section id="faq">
@@ -370,9 +431,9 @@
                     <li>Q: 零氪不充钱前期买什么坦克<br>A: 不充钱就前期雷神医博士。有礼券就买金鸡小乔</li>
                     <li>Q: 小氪小充用什么？<br>A: 金鸡小乔巨灵神，群里买88券。</li>
                     <li>Q: 大氪不差钱买什么？<br>A: 买新车，出一个买一个。</li>
-                    <li>Q: 他们说的母鸡是谁？<br>A: 骗子，坏人。</li>
                     <li>Q: 被质疑是母鸡怎么办？<br>A: 截图自证。</li>
                     <li>Q: 充值的礼券去哪里了？<br>A: 自动加到背包。</li>
+                    <li>Q: 登陆十四天送的能换三阶坦克的碎片，换什么坦克比较好？<br>A: 蜘蛛精。</li>
                     <li>Q: 阵营战怎么玩？<br>A: 和敌方玩家互刷，互相占领资源点得积分最快，100积分拿3颗许愿石。</li>
 
 
@@ -381,12 +442,23 @@
 
 
 
-                    <li>Q: 还有不懂的问题怎么办？<br>A: 官群@史官。</li>
+                    <li>Q: 还有不懂的问题怎么办？<br>A: 官群@史官、慕依凝、胩哥……</li>
 
                 </ul>
             </div>
 
         </section>
+
+
+
+        <div class="right1">
+            <div class="rightnav"><svg class="icon" aria-hidden="true">                   
+                </svg><a href="#top"><span>返回<br>&nbsp;&nbsp;顶部</span></a>
+            </div>
+        </div>
+
+
+
     </main>
     <footer>
         <p>&copy; 2024 玩家一纸折扇情. 保留所有权利.</p>
