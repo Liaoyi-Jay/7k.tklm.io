@@ -225,6 +225,20 @@
             background: #ffffff;
             border-radius: 15px;
         }
+
+
+
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .reply {
+            margin-left: 20px;
+        }
+
+
+        
     </style>
 </head>
 
@@ -235,11 +249,11 @@
     <nav>
         <a href="#home">主页</a>
         <a href="#introduction">坦克介绍</a>
-        <a href="#gameplay">游戏玩法</a>
         <a href="#controls">点券攻略</a>
         <a href="#tips">升级材料攻略</a>
         <a href="#king">王者争霸</a>
         <a href="#faq">新手答疑</a>
+        <a href="#comment">我要留言</a>
     </nav>
     <main>
         <section id="home">
@@ -273,25 +287,13 @@
                     <li>商城:熊猫，喜娃，铁扇公主，蜘蛛，关羽，张飞，阿瓦塔，南瓜，赵云，核潜艇，闪电，章鱼，胡子，孔明，钟馗，小乔，金鸡，吕布，圣诞，炎龙，小黄，磁能，爱迪生，后羿，宙斯，二郎神，朱雀，剑圣，罗，刑天，雅典娜，姜太公，哪吒，冰精灵，骷髅冥王，蚩尤，东海龙王，巨灵神，华佗，黄忠，如来41
                     </li>
                     <li>88卷:阿木，洛克，千手，柯，老君，冰墩墩，水手，恶灵，皮卡,9</li>
-                    <li>399:甜心，张三丰，时间，武松，魔花，司马懿，6</li>
-                    <li>499:沙漠死神，风清扬，潜行者，奥丁，轩辕，塔罗斯，烈焰战车,鬼谷子，8</li>
+                    <li>399:甜心，张三丰，时间，武松，魔花，司马懿，沙漠死神，7</li>
+                    <li>499:风清扬，潜行者，奥丁，轩辕，塔罗斯，烈焰战车,鬼谷子，周瑜，齐天大圣，9</li>
                     <li>人品王:年兽鸡，诸葛亮，骷髅王，金角，霸王龙，三头犬，6</li>
                 </ul>
             </div>
         </section>
-        <section id="gameplay">
-            <div class="container">
-                <h2>游戏玩法</h2>
-                <p>《坦克联盟》是一款结合了冒险、策略和角色扮演元素的游戏。你的目标是肝任务，攒礼券、道具完成自己的坦克养成，提升坦克等级。</p>
-                <ul class="steps">
-                    <li>创建你的角色并选择初始坦克。</li>
-                    <li>完成新手教程。</li>
-                    <li>打副本和竞技不断提升等级来解锁各种活动。</li>
-                    <li>解锁公会后去加个公会，最好是人多的排名前的，可以在官方群里找</li>
-                    <li>后面就可以去买月卡领取礼券混日子了，买月卡需要点券，但作为低氪党补药自己去充值，可以去官群找信得过的氪佬买点券</li>
-                </ul>
-            </div>
-        </section>
+        
         <section id="controls">
             <div class="container">
                 <h2>点券攻略</h2>
@@ -448,6 +450,20 @@
 
 
 
+        <section id="comment">
+            <div class="container">
+                <h1>评论系统</h1>
+                <form id="commentForm">
+                    <input type="text" id="commentInput" placeholder="请输入评论内容" required>
+                    <button type="button" onclick="addComment()">发表评论</button>
+                </form>
+                <div id="comments"></div>
+            </div>
+        </section>
+
+
+
+
         <div class="right1">
             <div class="rightnav"><svg class="icon" aria-hidden="true">                   
                 </svg><a href="#top"><span>返回<br>&nbsp;&nbsp;顶部</span></a>
@@ -513,6 +529,59 @@
             if (!found) {
                 alert('未找到匹配项！');
             }
+        }
+
+
+
+
+
+
+
+
+        // 评论区域
+        let commentId = 0;
+
+        function addComment() {
+            const commentText = document.getElementById('commentInput').value;
+            if (commentText.trim() === '') return;
+
+            const commentDiv = document.createElement('div');
+            commentDiv.className = 'comment';
+            commentDiv.id = `comment-${commentId}`;
+
+            const commentContent = document.createElement('p');
+            commentContent.textContent = commentText;
+
+            const replyForm = document.createElement('form');
+            replyForm.innerHTML = `
+                <input type="text" placeholder="回复评论" required>
+                <button type="button" onclick="addReply(${commentId})">回复</button>
+            `;
+
+            commentDiv.appendChild(commentContent);
+            commentDiv.appendChild(replyForm);
+
+            document.getElementById('comments').appendChild(commentDiv);
+
+            document.getElementById('commentInput').value = '';
+            commentId++;
+        }
+
+        function addReply(parentId) {
+            const replyText = event.target.previousElementSibling.value;
+            if (replyText.trim() === '') return;
+
+            const replyDiv = document.createElement('div');
+            replyDiv.className = 'reply';
+
+            const replyContent = document.createElement('p');
+            replyContent.textContent = replyText;
+
+            replyDiv.appendChild(replyContent);
+
+            document.getElementById(`comment-${parentId}`).appendChild(replyDiv);
+
+            event.target.previousElementSibling.value = '';
         }
     </script>
 </body>
